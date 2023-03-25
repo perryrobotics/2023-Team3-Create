@@ -1,6 +1,7 @@
 #define AM 0
 #define EM 2
 #define CM 3
+#define RM 0
 
 #define BLACK 2200
 
