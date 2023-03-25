@@ -7,4 +7,7 @@ void forward_for_black(int speed, int port, int amount);
 void drive_botgal();
 void drive_to_bump(int speed);
 
+void CCW_to_black(int speed, int port);
+void CW_to_black(int speed, int port);
+    
 void line_follow_to_black(int speed);

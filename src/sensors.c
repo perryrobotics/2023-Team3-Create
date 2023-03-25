@@ -1,4 +1,4 @@
-#include <kipr/botball.h>
+#include <kipr/wombat.h>
 #include "constants.h"
 
 int analog_average(int port, int readings)
@@ -17,6 +17,26 @@ int analog_average(int port, int readings)
 void forward_to_black(int speed, int port)
 {
     create_drive_straight(speed);
+    
+    while (analog(port) < BLACK)
+    {
+    }
+    create_drive_straight(0);
+}
+
+void CCW_to_black(int speed, int port)
+{
+    create_spin_CCW(speed);
+    
+    while (analog(port) < BLACK)
+    {
+    }
+    create_drive_straight(0);
+}
+
+void CW_to_black(int speed, int port)
+{
+    create_spin_CW(speed);
     
     while (analog(port) < BLACK)
     {
