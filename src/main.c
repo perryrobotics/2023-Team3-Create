@@ -5,82 +5,138 @@
 
 int main()
 {
-    //This is a strictly Anti-Shaurya Patel in Dewitt Perry Robotics team 4 area.
+    //KIALASH OBSESSED WITH DA TOYS
 
     create_connect();
-    printf("Connected \n \bbeta idk anymore\n SHAURYA PATEL WHAT HAPPENED?");
+    printf("Connected \n \b ''Aman's taking my toyssssssss'' - Kailash");
     create_full();
-    //wait_for_light(PORT);
-	enable_servos();
+    wait_for_light(LIGHT);
+    shut_down_in(119);
     //Knock ring stand
-    motor(RM,100);
+	motor(RM,100);
     msleep(1000);
     //Reset pos
-    motor(RM,0);
     //Setup for botgal
-	set_servo_position(AM, ARM_UP);
-    set_servo_position(EM, ELBOW_UP);
-    set_servo_position(CM, CLAW_OPEN);  
-	CW(200, 30);
+    enable_servos();
+    motor(RM,-100);
+	move_servo_slowly(AM, ARM_UP,5);
+    move_servo_slowly(EM, ELBOW_UP,5);
+    move_servo_slowly(CM, CLAW_OPEN,2);  
+    
+	CW(250, 30);
     //Driving across the line
-    backward(200, 500);
-    CW(200,40);
+    backward(550, 350);
+    motor(RM,0);
+    backward(550, 250);
+    CW(100,30);
 
+    msleep(550);
+	back_to_black(450, LEFT_LINE);
+    
+    backward(450,50);
     msleep(750);
-	back_to_black(200, RIGHT_LINE);
-    msleep(750);
+   
+    
     //Getting the arm and stuff up to botgal
-    set_servo_position(AM, ARM_BOTGAL);
-    set_servo_position(EM, ELBOW_BOTGAL);
-    set_servo_position(CM, CLAW_OPEN);
-    CCW(150,85);
-    backward(200,400);
-    forward(200,30);
+    move_servo_slowly(AM, ARM_BOTGAL,5);
+    
+    move_servo_slowly(EM, ELBOW_BOTGAL,5);
+    move_servo_slowly(CM, CLAW_OPEN,1);
+    CCW(150,95);
+    backward(350,500);
+    //forward(200,30);
     msleep(500);
+    
+    
     //GRABING HER
     set_servo_position(CM, CLAW_BOTGAL);
     msleep(1000);
+    
     //Pick her up
     set_servo_position(EM, ELBOW_UP);
-    msleep(1000);
+    msleep(5000);
+    
     //Drive to edge
     forward_to_bump(200);
+    backward(100,150);
+    
     //Turn to dropoff station
-    CCW(150,110);
+    CCW(150,120);
+    
     //set her down
-    move_servo_slowly(AM, ARM_DOWN, 15);
-    msleep(1100);
+    move_servo_slowly(AM, 2047, 5);
+    msleep(500);
     set_servo_position(CM, CLAW_OPEN);
-    msleep(1000);
-    set_servo_position(AM, ARM_BOTGAL);
-    //Getting in position for yellow cube 1
-    set_servo_position(EM, ELBOW_BOTGAL-130);
+    msleep(700);
+    move_servo_slowly(AM, ARM_BOTGAL,5);
+    //Getting in position for yellow cube 1 (nice code) - samee
+    set_servo_position(EM, ELBOW_BOTGAL-75);
     set_servo_position(CM, CLAW_OPEN);
+    backward(100,100);
     //Turning to it
-    CW(150,60);
+    CW(150,40);
     //Driving
-    backward(200,540);
-	CW(150,30);
-    backward(200,300);
+    backward(300,500);
+	CW(150,75);
+    backward(300,500);
     msleep(1000);
     //GRABBING CUBE NUM 1
     set_servo_position(CM, CLAW_BOTGAL);
     msleep(1000);
     //picking it up
     set_servo_position(EM, ELBOW_UP);
-    msleep(1000);
+    //msleep(45000);
+    forward(200,100);
     //Turn to dropoff
-    CCW(200,230);
+    forward(300,300);
+    CCW(100,36);
+    msleep(500);
+    move_servo_slowly(AM, 0, 5);
+    move_servo_slowly(EM,2047,5);
+    msleep(500);
+    move_servo_slowly(CM, CLAW_OPEN,5);
+	msleep(500);
+    move_servo_slowly(AM, 2047, 5);
+    set_servo_position(EM, 1777);
+    
     backward(200,300);
+    msleep(3000);
+    set_servo_position(CM, CLAW_BOTGAL);
+    msleep(1000);
+    msleep(1000);
+    move_servo_slowly(AM, 000, 10);
+    msleep(1000);
+    forward(300,250);
+    CW(30,5);
+    move_servo_slowly(EM, 2040, 5);
+    msleep(3000);
+    //move_servo_slowly(CM, 760, 5);
+    msleep(1000);
+    
+    
+    
+    //move_servo_slowly(EM,2047,5);
+
+    /*
+    CCW(200,230);
+    backward(300,300);
     msleep(1000);
     //Dropping off
-    move_servo_slowly(AM, ARM_DOWN, 15);
+    move_servo_slowly(AM, ARM_DOWN, 5);
     msleep(2500);
     set_servo_position(CM, CLAW_OPEN);
     msleep(1000);
     //Getting in pos for third
-    set_servo_position(AM,0);
+    move_servo_slowly(AM,200,5);
 	msleep(3000);
+    CCW(200,40);
+    forward(200,400);
+    move_servo_slowly(CM, CLAW_CLOSE, 5);
+	move_servo_slowly(AM,ARM_DOWN ,   5);
+    msleep(1000);
+    */
+    
+    
     disable_servos();
     create_disconnect();
     return 0;
