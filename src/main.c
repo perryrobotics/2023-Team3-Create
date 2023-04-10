@@ -14,7 +14,7 @@ int main()
     shut_down_in(119);
     //Knock ring stand
 	motor(RM,100);
-    msleep(1000);
+    msleep(750);
     //Reset pos
     //Setup for botgal
     enable_servos();
@@ -30,11 +30,11 @@ int main()
     backward(550, 250);
     CW(100,30);
 
-    msleep(550);
+    msleep(150);
 	back_to_black(450, LEFT_LINE);
     
     backward(450,50);
-    msleep(750);
+    msleep(150);
    
     
     //Getting the arm and stuff up to botgal
@@ -45,7 +45,7 @@ int main()
     CCW(150,95);
     backward(350,500);
     //forward(200,30);
-    msleep(500);
+    msleep(150);
     
     
     //GRABING HER
@@ -54,7 +54,7 @@ int main()
     
     //Pick her up
     set_servo_position(EM, ELBOW_UP);
-    msleep(5000);
+    msleep(9000);
     
     //Drive to edge
     forward_to_bump(200);
@@ -85,7 +85,7 @@ int main()
     msleep(1000);
     //picking it up
     set_servo_position(EM, ELBOW_UP);
-    //msleep(45000);
+    msleep(35000);
     forward(200,100);
     //Turn to dropoff
     forward(300,300);
